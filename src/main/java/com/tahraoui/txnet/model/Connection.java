@@ -1,5 +1,5 @@
 package com.tahraoui.txnet.model;
 
-import com.tahraoui.core.io.TXSerializable;
+import com.tahraoui.txcore.io.TXSerializable;
 
 public record Connection(int id, String username) implements TXSerializable {}

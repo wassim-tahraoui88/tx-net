@@ -1,6 +1,6 @@
 package com.tahraoui.txnet.util;
 
-import com.tahraoui.core.Config;
+import com.tahraoui.txcore.TXConfig;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -33,10 +33,10 @@ public class TXNetConfig {
 			KEY_DEBUG_ENABLED = "tx-net.debug.enabled", KEY_DEBUG_LEVEL = "tx-net.debug.level";
 	//endregion
 
-	private final Config rootConfig;
+	private final TXConfig rootConfig;
 
 	private TXNetConfig() {
-		this.rootConfig = Config.getInstance();
+		this.rootConfig = TXConfig.getInstance();
 		initLogger();
 	}
 	private void initLogger() {
