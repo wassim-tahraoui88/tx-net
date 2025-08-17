@@ -20,13 +20,14 @@ Add the following properties to your `src/main/resources/application.properties`
 | tx-net.server.generated_id     | seq             | Packet ID generation mode: `hash` or `seq`.      |
 | tx-net.security.enabled        | false           | Enable encryption for data transmission.         |
 | tx-net.security.key.aes.length | 256             | AES encryption key length (bits).                |
-| tx-net.security.key.rsa.length | 2024            | RSA encryption key length (bits).                |
+| tx-net.security.key.rsa.length | 2048            | RSA encryption key length (bits).                |
 | tx-net.security.iv.length      | 16              | Initialization vector length for encryption.     |
 | tx-net.file.size.max           | 10485760 (10MB) | Maximum allowed file size for transfers (bytes). |
-| tx-net.debug.enabled           | true            | Enable debug logging.                            |
+| tx-net.debug.enabled           | true            | Logging activity status.                         |
 | tx-net.debug.level             | DEBUG           | Logging level (`DEBUG`, `INFO`, `WARN`, etc.).   |
 
-_*Properties with `(none)` as default value are required and must be set._
+_*Properties with `(none)` as default value are required and must be set or not be used at all._
+
 **Example:**
 ```properties
 tx-net.server.url=127.0.0.1
