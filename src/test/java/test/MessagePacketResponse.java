@@ -1,8 +1,8 @@
 package test;
 
-import com.tahraoui.xnet.packet.response.XNetResponsePacket;
+import com.tahraoui.txnet.packet.response.TXNetResponsePacket;
 
-public class MessagePacketResponse extends XNetResponsePacket {
+public class MessagePacketResponse extends TXNetResponsePacket {
 
 	private final String content;
 

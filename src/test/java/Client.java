@@ -1,14 +1,14 @@
-import com.tahraoui.xnet.core.XNetService;
-import com.tahraoui.xnet.model.FileType;
-import com.tahraoui.xnet.model.UserCredentials;
-import com.tahraoui.xnet.packet.ftp.FileMetaDataTransfer;
-import com.tahraoui.xnet.packet.ftp.TransferMode;
+import com.tahraoui.txnet.core.TXNetService;
+import com.tahraoui.txnet.model.FileType;
+import com.tahraoui.txnet.model.UserCredentials;
+import com.tahraoui.txnet.packet.ftp.FileMetaDataTransfer;
+import com.tahraoui.txnet.packet.ftp.TransferMode;
 import test.MessagePacketRequest;
-import test.XNetServiceListenerImpl;
+import test.TXNetServiceListenerImpl;
 
 void main() {
-	XNetService.init(null, new XNetServiceListenerImpl());
-	XNetService.join(8080, new UserCredentials("Amine", "123"));
+	TXNetService.init(null, new TXNetServiceListenerImpl());
+	TXNetService.join(8080, new UserCredentials("Amine", "123"));
 
 	var fileName = "test.txt";
 	var resource = ClassLoader.getSystemClassLoader().getResource(fileName);
@@ -29,16 +29,16 @@ void main() {
 			}
 			case "upload" -> {
 				var metadata = new FileMetaDataTransfer(fileName, FileType.DOC, file.getTotalSpace(), TransferMode.UPLOAD);
-				XNetService.sendFileMetaData(XNetService.getInstance().getId(), metadata);
+				TXNetService.sendFileMetaData(TXNetService.getInstance().getId(), metadata);
 			}
 			case "download" -> {
 				var metadata = new FileMetaDataTransfer("new.txt", FileType.DOC, file.getTotalSpace(), TransferMode.DOWNLOAD);
-				XNetService.sendFileMetaData(XNetService.getInstance().getId(), metadata);
+				TXNetService.sendFileMetaData(TXNetService.getInstance().getId(), metadata);
 			}
-			default -> XNetService.sendRequestPacket(new MessagePacketRequest(command));
+			default -> TXNetService.sendRequestPacket(new MessagePacketRequest(command));
 		}
 	}
-	XNetService.disconnect();
+	TXNetService.disconnect();
 }
 
 private static void promptMenu() {

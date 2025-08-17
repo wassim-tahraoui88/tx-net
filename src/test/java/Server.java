@@ -1,12 +1,12 @@
-import com.tahraoui.xnet.core.XNetService;
-import com.tahraoui.xnet.model.UserCredentials;
+import com.tahraoui.txnet.core.TXNetService;
+import com.tahraoui.txnet.model.UserCredentials;
 import test.MessagePacketRequest;
 import test.PacketHandler;
-import test.XNetServiceListenerImpl;
+import test.TXNetServiceListenerImpl;
 
 void main() {
-	XNetService.init(new PacketHandler(), new XNetServiceListenerImpl());
-	XNetService.host(8080, new UserCredentials("Wassim", "123"));
+	TXNetService.init(new PacketHandler(), new TXNetServiceListenerImpl());
+	TXNetService.host(8080, new UserCredentials("Wassim", "123"));
 
 	var scanner = new Scanner(System.in);
 
@@ -17,10 +17,10 @@ void main() {
 			case "exit" -> {
 				break mainLoop;
 			}
-			default -> XNetService.sendRequestPacket(new MessagePacketRequest(command));
+			default -> TXNetService.sendRequestPacket(new MessagePacketRequest(command));
 		}
 	}
-	XNetService.disconnect();
+	TXNetService.disconnect();
 }
 
 private static void promptMenu() {

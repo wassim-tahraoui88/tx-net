@@ -49,9 +49,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.tahraoui</groupId>
-            <artifactId>core</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>dev.wassim-tahraoui</groupId>
+            <artifactId>tx-core</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 

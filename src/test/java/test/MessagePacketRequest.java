@@ -1,8 +1,8 @@
 package test;
 
-import com.tahraoui.xnet.packet.request.XNetRequestPacket;
+import com.tahraoui.txnet.packet.request.TXNetRequestPacket;
 
-public class MessagePacketRequest extends XNetRequestPacket {
+public class MessagePacketRequest extends TXNetRequestPacket {
 
 	private final String content;
 
