@@ -1,17 +1,18 @@
 # TXNet
 
-### Table of Contents
+### Table of Contents:
 - [Description](#description)
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
+- [To Do](#to-do)
 
-### Description
+### Description:
 This package provides a simple and efficient way to handle TCP socket connections in Java.<br>
 It abstracts the complexities of socket programming, allowing developers to focus on building their applications.<br>
 It includes features like connection management, data transmission, and error handling.
 
-### Installation
+### Installation:
 You can install the package with maven by adding the following dependency to your `pom.xml`:
 
 ```xml
@@ -22,7 +23,7 @@ You can install the package with maven by adding the following dependency to you
 </dependency>
 ```
 
-### Configuration
+### Configuration:
 The properties of **TXNet** and `TXNetConfig` be set using `application.properties` file in your `resources` directory.
 Here is a table of the available properties:
 
@@ -145,3 +146,7 @@ private void sendRequest() {
 ```
 
 To receive a response packet, you need to implement the `readResponsePacket` method in your `TXNetServiceListener` implementation, as shown in the previous example.
+
+### To Do:
+- [ ] Integrate FTP.
+- [ ] Support for more encryption algorithms.
